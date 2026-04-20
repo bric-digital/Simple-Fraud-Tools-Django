@@ -1,4 +1,4 @@
-# pylint: disable=no-member, line-too-long
+# pylint: disable=no-member, line-too-long, import-error
 
 from mmdb_writer import MMDBWriter
 from netaddr import IPSet
