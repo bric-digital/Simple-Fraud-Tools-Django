@@ -1,4 +1,4 @@
-# Simple Fraud Tools for Django
+# Simple Fraud Detection Tools for Django
 
 This is a Django app for generating and catching fraud signals in the context of research studies.
 
