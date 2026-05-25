@@ -27,14 +27,14 @@ class Command(BaseCommand):
         for i in range(0, 256):
             writer.insert_network(IPSet(['%s.0.0.0/8' % i]), {'endpoint_type': 'Unknown'}) # Unknown by default...
 
-        with requests.get(DATABASE_URL) as response:
+        with requests.get(DATABASE_URL, timeout=120) as response:
             for line in response.text.splitlines():
                 line = line.strip()
 
                 if len(line) > 0: # pylint: disable=len-as-condition
                     writer.insert_network(IPSet([line]), {'endpoint_type': 'Datacenter'})
 
-        with requests.get(VPN_URL) as response:
+        with requests.get(VPN_URL, timeout=120) as response:
             for line in response.text.splitlines():
                 line = line.strip()
 

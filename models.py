@@ -28,6 +28,11 @@ class IPAddressDatabase(models.Model):
     def fetch_details(self, ip_address):
         details = {}
 
+        if self.active is False:
+            return {
+                'error': '%s is not active' % self.name
+            }
+
         ip_address = socket.gethostbyname(ip_address)
 
         details['ip-address'] = ip_address
