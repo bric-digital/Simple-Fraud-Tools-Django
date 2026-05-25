@@ -1,4 +1,4 @@
-# pylint: disable=no-member, line-too-long, import-error
+# pylint: disable=no-member, line-too-long, import-error, wrong-import-order
 
 import tempfile
 
